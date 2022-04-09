@@ -1,13 +1,9 @@
 <?php
-
-    // CLASSE USUÁRIO
-
+    # Classe Usuario
     class Usuario{
-        
         private $id;
         private $nome;
         private $email;
-
 
         # Getters / Setters
         public function getId(){
@@ -30,17 +26,16 @@
         public function setEmail($email){
             $this->email = strtolower(trim($email));
         }
-
     }
 
-    // INTERFACE DA CLASSE USUARIO
-    interface UsuarioDAO{
+    #----------------------------------------------------------------
+    
+    # INTERFACE USUARIO
 
+    interface UsuarioDAO{
         public function add(Usuario $u);
         public function findAll();
-        public function findById($id);
+        public function findById($i);
         public function update(Usuario $u);
         public function delete($id);
-
-        
     }
