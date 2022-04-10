@@ -10,6 +10,8 @@
     if ($id){
 
         $usuarioDao->delete($id);
+
+        
     }
 
     header("Location: index.php");

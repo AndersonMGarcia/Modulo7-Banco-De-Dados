@@ -1,10 +1,10 @@
 <?php
-    require 'config.php';
-    require 'dao/UsuarioDAOMySQL.php';
+   require 'config.php';
+   require 'dao/UsuarioDAOMySQL.php';
 
-    $usuarioDao = new UsuarioDaoMysql($pdo);
+   $usuarioDao = new UsuarioDaoMysql($pdo);
 
-    $lista = $usuarioDao->findAll();
+   $lista = $usuarioDao->findAll();
     
 ?>
 
@@ -24,25 +24,29 @@
 
         <table  width="100%" cellpadding="5px" cellspacing="0">
 
-            <tr class="tabletr">
+            <tr>
                 <th>ID</th>
                 <th>NOME</th>
-                <th>E-MAIL</th>
+                <th>EMAIL</th>
                 <th>AÇÕES</th>
             </tr>
 
             <?php foreach($lista as $usuario): ?>
+
                 <tr class="tabletr">
-                    <td class="tabletd"><?= $usuario->getId(); ?></td>
-                    <td class="tabletd"><?= $usuario->getNome(); ?></td>
-                    <td class="tabletd"><?= $usuario->getEmail(); ?></td>
+                    <td><?= $usuario->getId(); ?></td>
+                    <td><?= $usuario->getNome(); ?></td>
+                    <td><?= $usuario->getEmail(); ?></td>
 
                     <td>
                         <a href="editar.php?id=<?= $usuario->getId(); ?>" class="botao">Editar</a>
                         <a href="excluir.php?id=<?= $usuario->getId(); ?>" class="botao">Excluir</a>
                     </td>
+                    
                 </tr>
             <?php endforeach; ?>
+
+
         </table>
 
 

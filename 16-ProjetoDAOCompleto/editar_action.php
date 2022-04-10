@@ -1,14 +1,15 @@
 <?php
-    require 'config.php';
-    require 'dao/UsuarioDAOMySQL.php';
+   
+   require 'config.php';
+   require 'dao/UsuarioDAOMySQL.php';
 
-    $usuarioDao = new UsuarioDaoMysql($pdo);
+   $usuarioDao = new UsuarioDaoMysql($pdo);
 
-    $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+   $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+   $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+   $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
-    if ($id && $nome && $email){
+   if ($id && $nome && $email){
 
         if ($usuarioDao->findByEmail($email) === false){
 
@@ -20,17 +21,18 @@
 
             header("Location: index.php");
             exit;
-        
+
         }else{
+
             header("Location: editar.php?id=".$id);
             exit;
         }
-
-        
-
-
-    }else{
+       
 
             
-    }
+
+    }else{
+        header("Location: editar.php?id=".$id);
+        exit;
+   }
 ?>

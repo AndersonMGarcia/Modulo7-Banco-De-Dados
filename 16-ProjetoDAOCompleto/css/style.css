@@ -6,7 +6,7 @@ div::before{
     display: block;
     position: relative;
     width: 860px;
-    background-color: #67a8dd;
+    background-color:  #3c5df3;
     content: "Sistema de Cadastro de Usuários";
     color: #ffffff;
     padding: 5px;
@@ -15,6 +15,7 @@ div::before{
     font-weight: bold;
     top: -10px;
     left: -10px;
+    margin-bottom: 20px;
 
 }
 div{
@@ -59,7 +60,7 @@ form #botao{
 }
 .botao{
     text-decoration: none;    
-    background-color: #9e03e6;
+    background-color: #5a6268;
     padding: 8px 5px 8px 5px;
     color: #fff;  
     border-radius: 5px;  
@@ -71,13 +72,19 @@ form #botao{
 }
 table{
     cursor: pointer;
+    text-align: left;
+}
+table th{
+    background-color: #5a6268;
 }
 .tabletr{
     height: 35px;
     border: none;
 }
 .tabletr:hover{
-    background-color: antiquewhite;
+    background-color: #858b91;
+    color: #ffffff;
+    font-weight: bold;
 }
 .tabletd{
     border: 1px dashed #ccc;
